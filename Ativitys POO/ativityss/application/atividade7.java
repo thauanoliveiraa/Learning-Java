@@ -20,11 +20,73 @@ public class atividade7 {
         Voce deve fazer um PROGRAMA QUE REALIZE O CADASTRO DE UMA CONTA, DANDO OPÇAO PARA QUE SEJA OU NAO INFORMADO O VALOR DO DEPOSITO INICIAL. EM SEGUIDA, REALIZAR UM DEPOISTO E DEPOIS UM SAQUE (SEMPRE MOSTRANDO OS DADOS DA CONTA APOS CADA ALTERAÇÃO)*/
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
-        BankAccount BankAccount = new BankAccount();
-
+        int choice;
+        
         System.out.print("Insert the account number : ");
-        
-        
+        int accountNumber = scan.nextInt();
+
+        System.out.print("Insert the account name : ");
+        String accountName = scan.nextLine();
+        accountName = scan.nextLine();
+
+        BankAccount bankaccount = new BankAccount(accountNumber, accountName);
+
+        System.out.println("Account number : " +accountNumber);
+        System.out.println("Account titular name : " +accountName);
+
+        do{
+            System.out.print("\n\n\n\nWhat would you like to do ? \n\n1 - View account number\n\n2 - View titular account name \n\n3 - Change titular account name\n\n4 - View account balance\n\n5 - Money deposit\n\n6 - Money withdraw\n\n7 - Exit\n\nInsert your choice : ");
+            choice = scan.nextInt();
+
+            switch(choice){
+                case 1:
+                    System.out.print("Account number : " +bankaccount.getAccountNumber());
+                    break;
+                case 2:
+                    System.out.print("Titular account name : " +bankaccount.getAccountName());
+                    break;
+                
+                case 3:
+                    System.out.print("Insert a new name : ");
+                    String newName = scan.nextLine();
+                    newName = scan.nextLine();
+
+                    bankaccount.setAccountName(newName);
+                    System.out.print("New name : " +bankaccount.getAccountName());
+                    // NOVO VALOR VAI ESTAR DENTRO (NO LUGAR DO accountName)
+                    break;
+
+                case 4:
+                    System.out.printf("Account balance R$ %.2f", bankaccount.getAccountBalance());
+                    break;
+                    
+                case 5:
+                    System.out.print("Insert a money quantity R$ ");
+                    double moneyValue = scan.nextDouble();
+                    bankaccount.setMoneyDeposit(moneyValue);
+                    System.out.printf("New account balance R$ %.2f", bankaccount.getAccountBalance());
+                    break;
+
+                case 6:
+                    System.out.print("Insert a withdraw quantity R$ ");
+                    double moneyQuantityWithDraw = scan.nextDouble();
+                    bankaccount.setMoneyWithdraw(moneyQuantityWithDraw);
+                    System.out.printf("New account balance R$ %.2f", bankaccount.getAccountBalance());     
+                    break;
+
+                case 7:
+                    System.out.println("Thanks for using");
+                    System.out.println("Made by AURORA");   
+                    break;
+
+                default:
+                    System.out.print("Insert a correct number and try again !!!");
+                    break;
+            }
+
+        }while(choice!=7);
+
+        scan.close();
     }
     
 }
