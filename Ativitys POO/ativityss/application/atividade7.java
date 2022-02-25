@@ -21,6 +21,7 @@ public class atividade7 {
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
         int choice;
+        double initialDeposit;
         
         System.out.print("Insert the account number : ");
         int accountNumber = scan.nextInt();
@@ -28,11 +29,24 @@ public class atividade7 {
         System.out.print("Insert the account name : ");
         String accountName = scan.nextLine();
         accountName = scan.nextLine();
-
         BankAccount bankaccount = new BankAccount(accountNumber, accountName);
 
+        System.out.print("Would you like make a initial deposit ? ");
+        String choiceDeposit = scan.nextLine();
+        switch(choiceDeposit){
+            case "y":
+                System.out.print("Insert initial value R$ ");
+                initialDeposit = scan.nextDouble();
+                BankAccount depositInitial = new BankAccount(initialDeposit);
+                break;
+
+            case "n":
+                System.out.print("Ok, understand");    
+                break;
+        }
         System.out.println("Account number : " +accountNumber);
         System.out.println("Account titular name : " +accountName);
+        System.out.printf("Account initial deposit value R$ %.2f", bankaccount.getInitialDepositValue());
 
         do{
             System.out.print("\n\n\n\nWhat would you like to do ? \n\n1 - View account number\n\n2 - View titular account name \n\n3 - Change titular account name\n\n4 - View account balance\n\n5 - Money deposit\n\n6 - Money withdraw\n\n7 - Exit\n\nInsert your choice : ");
