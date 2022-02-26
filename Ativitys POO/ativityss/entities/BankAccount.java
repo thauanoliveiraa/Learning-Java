@@ -30,12 +30,12 @@ public class BankAccount {
         this.accountName = accountName; 
     }
 
-    public double getInitialDepositValue(){
-        return moneyQuantityValue; 
-    }
-
     public double getAccountBalance(){ // VER SALDO DA CONTA
         return moneyQuantityValue;
+    }
+
+    public void setInitialDepositValue(double ){
+        return moneyQuantityValue; 
     }
 
     public void setMoneyDeposit(double moneyQuantityValue){ // FAZER DEPOSITO
