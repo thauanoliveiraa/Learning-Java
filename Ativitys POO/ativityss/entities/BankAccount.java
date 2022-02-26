@@ -3,7 +3,6 @@ package entities;
 public class BankAccount {
     private int accountNumber;
     private String accountName;
-    private double initialDeposit;
     private double moneyQuantityValue = 0.00;
 
     /* Deposito (inicial tambem) , saque (incluir taxa de R$ 5,00),  ver numero da conta, ver nome da conta, ver saldo  SÃO MÉTODOS */
@@ -13,9 +12,9 @@ public class BankAccount {
         this.accountName = accountName;
 
     }
-    
-    public BankAccount(double initialDeposit){
-        setMoneyQuantityValue(initialDeposit);
+
+    public BankAccount(double moneyQuantityValue){
+        setInitialDepositValue(moneyQuantityValue);
     }
 
     public int getAccountNumber(){ // VER NUMERO DA CONTA
@@ -34,8 +33,11 @@ public class BankAccount {
         return moneyQuantityValue;
     }
 
-    public void setInitialDepositValue(double ){
-        return moneyQuantityValue; 
+    public double getInitialDepositValue(){
+        
+    }
+    public void setInitialDepositValue(double moneyQuantityValue){
+        this.moneyQuantityValue = moneyQuantityValue;
     }
 
     public void setMoneyDeposit(double moneyQuantityValue){ // FAZER DEPOSITO

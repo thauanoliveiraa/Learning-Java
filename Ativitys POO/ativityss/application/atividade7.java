@@ -37,8 +37,7 @@ public class atividade7 {
             case "y":
                 System.out.print("Insert initial value R$ ");
                 initialDeposit = scan.nextDouble();
-                double moneyValue = scan.nextDouble();
-                bankaccount.setMoneyDeposit(moneyValue);
+                bankaccount.setInitialDepositValue(initialDeposit);
                 System.out.printf("New account balance R$ %.2f", bankaccount.getAccountBalance());
                 break;
 
