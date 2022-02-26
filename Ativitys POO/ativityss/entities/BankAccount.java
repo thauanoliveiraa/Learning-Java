@@ -34,7 +34,7 @@ public class BankAccount {
     }
 
     public double getInitialDepositValue(){
-        
+        return moneyQuantityValue;
     }
     public void setInitialDepositValue(double moneyQuantityValue){
         this.moneyQuantityValue = moneyQuantityValue;
