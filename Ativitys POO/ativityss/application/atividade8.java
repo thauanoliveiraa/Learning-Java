@@ -15,6 +15,8 @@ public class atividade8 {
          System.out.print("How many people will rent rooms ? ");
          int n = scan.nextInt();
 
+         RoomPension[] vect = new RoomPension[n];
+
          for(int i = 0; i < n; i++){
              // OS DADOS DE CADASTRO PRECISAM FICAR AQUI DENTRO
             System.out.printf("\n\n\nDATA %d REGISTRATION", i);
@@ -26,7 +28,9 @@ public class atividade8 {
             System.out.print("\nWhats the bedroom of people ? ");
             int bedroom = scan.nextInt();
             RoomPension roompension = new RoomPension(name, email, bedroom);
+            vect[i] = new RoomPension(name, email, bedroom);
          }
-         
+
+        scan.close();;
     }
 }
