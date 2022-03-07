@@ -27,13 +27,17 @@ public class atividade8 {
             String email = scan.nextLine();
             System.out.print("\nWhats the bedroom of people ? ");
             int bedroom = scan.nextInt();
-            vect[bedroom] = new RoomPension(name, email, bedroom);
+            vect[i] = new RoomPension(name, email, bedroom);
          }
 
          for(int i = 0; i < 10; i++){
             if(vect[i] != null){
-                int bedroom;
-                System.out.println("All data : " +vect[bedroom]);
+                System.out.printf("\n\nDATA %d REGISTER", i+1);
+
+                System.out.println("\nName : " +vect[i].getName());
+                System.out.println("Email : " +vect[i].getEmail());
+                System.out.println("Bedroom : " +vect[i].getBedroom());
+                System.out.println("\n");
             }
         }
 
