@@ -31,4 +31,9 @@ public class EmployeeData {
     public double getEmployeeWage(){
         return employeeWage;
     }
+
+    @Override
+	public String toString() {
+		return "  | ID : " + employeeID + " | NAME : " + employeeName+ " | ACTUAL WAGE : " + String.format("R$ %.2f", employeeWage) + "\n\n";
+	}
 }
