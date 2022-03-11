@@ -25,25 +25,20 @@ public class atividade9 {
             System.out.printf("\n\n--%d REGISTER--", i+1);
             System.out.print("\n\nInsert the ID : ");
             int employeeID = scan.nextInt();
-
             System.out.print("Insert the name : ");
             String employeeName = scan.nextLine();
             employeeName = scan.nextLine();
-
             System.out.print("Insert the actual wage R$ ");
             double employeeWage = scan.nextDouble();
-
             EmployeeData employee = new EmployeeData(employeeID, employeeName, employeeWage);
 
 			dataList.add(employee);
         }
 
-        // System.out.println(dataList);
-
         System.out.println(dataList);
 
         System.out.print("\n\nRegister sucessfuly !!!\n\n");
-        
+
         scan.close();
     }
 }
