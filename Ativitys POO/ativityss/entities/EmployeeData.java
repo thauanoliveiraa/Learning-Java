@@ -34,6 +34,6 @@ public class EmployeeData {
 
     @Override
 	public String toString() {
-		return " | ID : " + employeeID + " | NAME : " + employeeName+ " | ACTUAL WAGE : " + String.format("R$ %.2f |", employeeWage) + "\n\n";
+		return "  ID : " + employeeID + "  NAME : " + employeeName+ "  ACTUAL WAGE : " + String.format("R$ %.2f ", employeeWage) + "\n\n";
 	}
 }
