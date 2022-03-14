@@ -13,6 +13,7 @@ public class atividade9 {
         List<EmployeeData> dataList = new ArrayList<>();
 
         int choice = 0;
+        int searchID;
 
         /* Fazer um programa para ler um numero inteiro N e depois os dados (id, nome e salario) de N funcionarios. Nao deve haver repetição de id
         
@@ -67,7 +68,7 @@ public class atividade9 {
                     System.out.print("ADD SALARY PORCENTAGE\n\n");
                     System.out.println("Insert the employee ID : ");
                     int findID = scan.nextInt();
-                    int searchID = dataList.indexOf(findID);
+                    searchID = dataList.indexOf(findID);
                     if(searchID >= 0){
 
                     }
