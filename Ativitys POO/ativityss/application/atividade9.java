@@ -69,10 +69,20 @@ public class atividade9 {
                     System.out.println("Insert the employee ID : ");
                     int findID = scan.nextInt();
                     searchID = dataList.indexOf(findID);
-                    if(searchID >= 0){
+                    if(searchID >= 0){  
+                        System.out.print("Add salary porcentage % ");
+                        int porcentage = scan.nextInt();
+                        double convertPorcentage = porcentage/100;
+                        employeeWage = (employeeWage*convertPorcentage);
+
+    
+
+
 
                     }
                     //colocar indexof e ver o que fazer
+
+
                     System.out.print("Insert the porcentage do add at salary % ");
                     int porcentage = scan.nextInt();
 
@@ -88,3 +98,24 @@ public class atividade9 {
         scan.close();
     }
 }
+
+
+
+
+public class SeuObjetoComplexo{ 
+      public static void main(String[] args) { 
+          List<SeuObjetoComplexo> lista = new ArrayList<SeuObjetoComplexo>();
+           lista.add(new SeuObjetoComplexo("1")); 
+           lista.add(new SeuObjetoComplexo("2"));
+            lista.add(new SeuObjetoComplexo("3"));
+            
+            System.out.println(lista); 
+            
+            listaNomes.get(0).setNome("4"); 
+            
+            /** indice comeca do 0 */
+             System.out.println(lista); }
+
+
+
+                    public static void main(String[] args) {     List<String> listaNomes = new ArrayList<String>();      listaNomes.add("Nome 1");       listaNomes.add("Nome 2");       listaNomes.add("Nome 3");               System.out.println(listaNomes);     listaNomes.set(1 /** indice comeca do 0 */, "Nome 4");      System.out.println(listaNomes); }
