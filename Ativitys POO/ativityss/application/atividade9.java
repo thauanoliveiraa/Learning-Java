@@ -1,4 +1,5 @@
 package application;
+
 import java.util.Scanner;
 import java.util.Locale;
 import entities.EmployeeData;
@@ -13,7 +14,10 @@ public class atividade9 {
         List<EmployeeData> dataList = new ArrayList<>();
 
         int choice = 0;
-        int searchID;
+        int searchID = 0;
+        int employeeID;
+        String employeeName;
+        double employeeWage = 0;
 
         /* Fazer um programa para ler um numero inteiro N e depois os dados (id, nome e salario) de N funcionarios. Nao deve haver repetição de id
         
@@ -27,12 +31,12 @@ public class atividade9 {
         for(int i =0; i<employeeRegister; i++){
             System.out.printf("\n\n--%d REGISTER--", i+1);
             System.out.print("\n\nInsert the ID : ");
-            int employeeID = scan.nextInt();
+            employeeID = scan.nextInt();
             System.out.print("Insert the name : ");
-            String employeeName = scan.nextLine();
+            employeeName = scan.nextLine();
             employeeName = scan.nextLine();
             System.out.print("Insert the actual wage R$ ");
-            double employeeWage = scan.nextDouble();
+            employeeWage = scan.nextDouble();
             EmployeeData employee = new EmployeeData(employeeID, employeeName, employeeWage);
 
 			dataList.add(employee);
@@ -40,6 +44,8 @@ public class atividade9 {
 
         System.out.print("\n\nRegister sucessfully !!!\n\n");
 
+        System.out.println(dataList.indexOf("Thauan"));
+        
         do{
             System.out.print("Choose what to do now :\n\n1 - View registry\n\n2 - Remove registry\n\n3 - Add salary porcentage\n\n5 - Exit\n\nChoice : ");
             int choose = scan.nextInt();
@@ -68,18 +74,28 @@ public class atividade9 {
                     System.out.print("ADD SALARY PORCENTAGE\n\n");
                     System.out.println("Insert the employee ID : ");
                     int findID = scan.nextInt();
-                    searchID = dataList.indexOf(findID);
+                    //int sizeDataList = dataList.size();
+                    System.out.println(dataList.indexOf("Thauan"));
+                    
+                    /*for(int i=0; i<dataList.size(); i++){
+                        searchID = dataList.indexOf(findID);
+                    }*/
+
+                    System.out.printf("Employee ID inserted %d", searchID);
+
                     if(searchID >= 0){  
                         System.out.print("Add salary porcentage % ");
                         int porcentage = scan.nextInt();
                         double convertPorcentage = porcentage/100;
                         employeeWage = (employeeWage*convertPorcentage);
-
-    
-
-
-
+                        
                     }
+
+                    else{
+                        System.out.print("Error, the inserted ID doesnt exist, try again");
+                    }
+
+
                     //colocar indexof e ver o que fazer
 
 
@@ -98,24 +114,3 @@ public class atividade9 {
         scan.close();
     }
 }
-
-
-
-
-public class SeuObjetoComplexo{ 
-      public static void main(String[] args) { 
-          List<SeuObjetoComplexo> lista = new ArrayList<SeuObjetoComplexo>();
-           lista.add(new SeuObjetoComplexo("1")); 
-           lista.add(new SeuObjetoComplexo("2"));
-            lista.add(new SeuObjetoComplexo("3"));
-            
-            System.out.println(lista); 
-            
-            listaNomes.get(0).setNome("4"); 
-            
-            /** indice comeca do 0 */
-             System.out.println(lista); }
-
-
-
-                    public static void main(String[] args) {     List<String> listaNomes = new ArrayList<String>();      listaNomes.add("Nome 1");       listaNomes.add("Nome 2");       listaNomes.add("Nome 3");               System.out.println(listaNomes);     listaNomes.set(1 /** indice comeca do 0 */, "Nome 4");      System.out.println(listaNomes); }
