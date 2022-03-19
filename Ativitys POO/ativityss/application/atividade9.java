@@ -32,6 +32,11 @@ public class atividade9 {
             System.out.printf("\n\n--%d REGISTER--", i+1);
             System.out.print("\n\nInsert the ID : ");
             employeeID = scan.nextInt();
+            while(checkID(dataList, employeeID)){
+                System.out.print("This ID already exists, try again");
+                System.out.print("\n\nInsert the ID : ");
+                employeeID = scan.nextInt();
+            }
             System.out.print("Insert the name : ");
             employeeName = scan.nextLine();
             employeeName = scan.nextLine();
@@ -46,7 +51,7 @@ public class atividade9 {
         System.out.println(dataList.size());
         
         do{
-            System.out.print("\n\nChoose what to do now :\n\n1 - View registry\n\n2 - Remove registry\n\n3 - Add salary porcentage\n\n5 - Exit\n\nChoice : ");
+            System.out.print("\n\nChoose what to do now :\n\n1 - View registry\n\n2 - Remove registry\n\n3 - Add salary porcentage\n\n4 - Exit\n\nChoice : ");
             int choose = scan.nextInt();
 
             switch(choose){
@@ -73,40 +78,24 @@ public class atividade9 {
                     System.out.print("ADD SALARY PORCENTAGE\n\n");
                     System.out.println("Insert the employee ID : ");
                     int findID = scan.nextInt();
-                    int dataListSizeSize = dataList.size();  
-                    for(int i=0; i<dataListSizeSize; i++){
 
-                    }                 
-
-
-                    //int sizeDataList = dataList.size();
-                    System.out.println(dataList.indexOf("Thauan"));
+                    EmployeeData employee = dataList.stream().filter(x -> x.getEmployeeID() == findID).findFirst().orElse(null);
                     
-                    /*for(int i=0; i<dataList.size(); i++){
-                        searchID = dataList.indexOf(findID);
-                    }*/
-
-                    System.out.printf("Employee ID inserted %d", searchID);
-
-                    if(searchID >= 0){  
-                        System.out.print("Add salary porcentage % ");
-                        int porcentage = scan.nextInt();
-                        double convertPorcentage = porcentage/100;
-                        employeeWage = (employeeWage*convertPorcentage);
-                        
-                    }
-
-                    else{
+                    if(employee == null){
                         System.out.print("Error, the inserted ID doesnt exist, try again");
                     }
+                    else{
+                        System.out.print("Insert the porcentage do add at salary % ");
+                        int wagePorcentage = scan.nextInt();
+                        employee.porcentageEmployeeWage(wagePorcentage);
+                    }
+                    break;
 
+                case 4:
+                    System.out.print("Thanks for using : ) ");
 
+                    
                     //colocar indexof e ver o que fazer
-
-
-                    System.out.print("Insert the porcentage do add at salary % ");
-                    int porcentage = scan.nextInt();
-
 
                     // porcentagem = porcentagem dada / 100
                     //salario + (salario * porcentagem )
@@ -114,8 +103,13 @@ public class atividade9 {
 
             }
 
-        }while(choice != 5);
+        }while(choice != 4);
 
         scan.close();
+    }
+
+    public static boolean checkID(List<EmployeeData> dataList, int employeeID){
+        EmployeeData employee = dataList.stream().filter(x -> x.getEmployeeID() == employeeID).findFirst().orElse(null);
+        return employee != null;
     }
 }

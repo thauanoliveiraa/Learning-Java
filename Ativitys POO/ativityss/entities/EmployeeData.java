@@ -4,6 +4,7 @@ public class EmployeeData {
     private Integer employeeID;
     private String employeeName;
     private Double employeeWage;
+    private int porcentage;
 
     public EmployeeData(Integer employeeID, String employeeName, Double employeeWage){
         this.employeeID = employeeID;
@@ -30,6 +31,10 @@ public class EmployeeData {
 
     public double getEmployeeWage(){
         return employeeWage;
+    }
+
+    public void  porcentageEmployeeWage(double porcentage){
+        employeeWage += employeeWage*(porcentage/100);
     }
 
     @Override
