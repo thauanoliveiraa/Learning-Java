@@ -15,9 +15,9 @@ public class atividade9 {
 
         int choice = 0;
         int searchID = 0;
-        int employeeID;
+        Integer employeeID;
         String employeeName;
-        double employeeWage = 0;
+        Double employeeWage = 0.00;
 
         /* Fazer um programa para ler um numero inteiro N e depois os dados (id, nome e salario) de N funcionarios. Nao deve haver repetição de id
         
@@ -25,7 +25,7 @@ public class atividade9 {
         
         Lembre-se de aplicar a técnica de encapsulamento para não permitir que o salário possa ser mudado livremente. Um salario pode aumentado com base em uma operação de aumento por uma porcentagem */
 
-        System.out.print("How many employees wil be registered ? ");
+        System.out.print("How many employees will be registered ? ");
         int employeeRegister = scan.nextInt();
 
         for(int i =0; i<employeeRegister; i++){
@@ -43,11 +43,10 @@ public class atividade9 {
         }
 
         System.out.print("\n\nRegister sucessfully !!!\n\n");
-
-        System.out.println(dataList.indexOf("Thauan"));
+        System.out.println(dataList.size());
         
         do{
-            System.out.print("Choose what to do now :\n\n1 - View registry\n\n2 - Remove registry\n\n3 - Add salary porcentage\n\n5 - Exit\n\nChoice : ");
+            System.out.print("\n\nChoose what to do now :\n\n1 - View registry\n\n2 - Remove registry\n\n3 - Add salary porcentage\n\n5 - Exit\n\nChoice : ");
             int choose = scan.nextInt();
 
             switch(choose){
@@ -74,6 +73,12 @@ public class atividade9 {
                     System.out.print("ADD SALARY PORCENTAGE\n\n");
                     System.out.println("Insert the employee ID : ");
                     int findID = scan.nextInt();
+                    int dataListSizeSize = dataList.size();  
+                    for(int i=0; i<dataListSizeSize; i++){
+
+                    }                 
+
+
                     //int sizeDataList = dataList.size();
                     System.out.println(dataList.indexOf("Thauan"));
                     
