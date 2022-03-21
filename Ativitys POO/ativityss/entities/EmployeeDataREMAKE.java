@@ -4,6 +4,8 @@ public class EmployeeDataREMAKE {
     private Integer employeeID;
     private String employeeName;
     private Double employeeSalary;
+    private double percentage;
+
 
     public EmployeeDataREMAKE(Integer employeeID, String employeeName, Double employeeSalary){
         this.employeeID = employeeID;
@@ -19,12 +21,16 @@ public class EmployeeDataREMAKE {
         return employeeName;
     }
 
+    public void setEmployeeName(String employeeName){
+        this.employeeName = employeeName;
+    }
+
     public Double getEmployeeSalary(){
         return employeeSalary;
     }
 
-    public static void chooseSalary(double percentage){
-        employeeSalary += employeeSalary * (percentage /100);
+    public void salaryChoosePercentage(double percentage){
+        employeeSalary += employeeSalary*(percentage/100);
     }
 
     @Override

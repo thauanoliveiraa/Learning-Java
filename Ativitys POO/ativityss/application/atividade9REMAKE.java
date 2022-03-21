@@ -65,23 +65,38 @@ public class atividade9REMAKE {
                 case 3: 
                     System.out.print("Insert the ID : ");
                     int findID = scan.nextInt();
-
                     EmployeeDataREMAKE employee = dataList.stream().filter(x -> x.getEmployeeID() == findID).findFirst().orElse(null);
 
                     if(employee == null){
                         System.out.print("The ID doesnt exist, try again");
                     }
                     else{
-                        System.out.print("Insert the percentage % ");
-                        int salaryPercentage = scan.nextInt(); 
-                        employee.chooseSalary(salaryPercentage);
+                        System.out.print("Insert the percentage % ");          
+                        double salaryPercentage = scan.nextInt();
+                        employee.salaryChoosePercentage(salaryPercentage);
+                        System.out.print("Percentage added was sucessfully");
                     }
                     break;
                 
                 case 4:
+                    System.out.print("Insert the id want to change name : ");
+                    int findPosition = scan.nextInt();
+                    EmployeeDataREMAKE employeeChangeName = dataList.stream().filter(x -> x.getEmployeeID() == findPosition).findFirst().orElse(null); 
+
+                    if(employeeChangeName == null){
+                        System.out.print("The name doesnt exist in register");
+                    }
+                    else{
+                        System.out.print("Insert the new name : ");
+                        String newName = scan.nextLine();
+                        newName = scan.nextLine();
+                        employeeChangeName.setEmployeeName(newName);
+                        System.out.print("Changed name sucessfully");
+                    }
                     break;
                 
                 case 5:
+                    System.out.print("Thanks for using !!!");
                     break;
             }
         }while(choice !=5);
