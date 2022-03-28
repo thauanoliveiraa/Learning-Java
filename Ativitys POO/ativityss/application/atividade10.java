@@ -14,15 +14,24 @@ public class atividade10 {
     
         ArrayVerification[][] array = new ArrayVerification[lineValue][columValue];
 
-        for(int i=0; i<lineValue; i++){
-            for(int j=0; i<columValue; i++){
-                System.out.print("Insert line value : ");
+        System.out.print("Insert line quantity: ");
+        int lineQuantity = scan.nextInt();
+
+        System.out.print("Insert colum quantity : ");
+        int columQuantity = scan.nextInt();
+
+        for(int i=0; i<lineQuantity; i++){
+            for(int j=0; i<columQuantity; i++){
+                System.out.printf("\n\n-- %d ARRAY --", i+1);
+                System.out.print("\nInsert line value : ");
                 lineValue= scan.nextInt();
         
-                System.out.print("Insert colum value : ");
+                System.out.print("\nInsert colum value : ");
                 columValue = scan.nextInt();
             }
         }
+
+        System.out.print(array[lineValue][columValue] + " ");
 
         scan.close();
     }
