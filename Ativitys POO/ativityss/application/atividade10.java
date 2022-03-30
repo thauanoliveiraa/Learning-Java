@@ -12,7 +12,7 @@ public class atividade10 {
         int lineValue = 0;
         int columValue = 0;
     
-        ArrayVerification[][] array = new ArrayVerification[lineValue][columValue];
+        int[][] array = new int [lineValue][columValue];
 
         System.out.print("Insert line quantity: ");
         int lineQuantity = scan.nextInt();
@@ -22,16 +22,19 @@ public class atividade10 {
 
         for(int i=0; i<lineQuantity; i++){
             for(int j=0; i<columQuantity; i++){
-                System.out.printf("\n\n-- %d ARRAY --", i+1);
-                System.out.print("\nInsert line value : ");
+                
+                System.out.print("\nInsert value : ");
+                array[lineValue][columValue] = scan.nextInt();
+
+                /* System.out.print("\nInsert line value : ");
                 lineValue= scan.nextInt();
         
                 System.out.print("\nInsert colum value : ");
-                columValue = scan.nextInt();
+                columValue = scan.nextInt(); */
             }
         }
 
-        System.out.print(array[lineValue][columValue] + " ");
+        System.out.print(array[lineValue][lineValue] + " ");
 
         scan.close();
     }
