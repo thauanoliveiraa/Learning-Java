@@ -11,13 +11,15 @@ import entities.AuroraEngine;
 
 
 public class auroraRegisterSystem{
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException{
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
 
         List<AuroraEngine> auroraList = new ArrayList<>(); //Criação da lista para armazenamento dos registros
 
-        SimpleDateFormat auroraSystemDate = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat auroraSystemDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+        Date auroraDate = auroraSystemDate.parse("dd/MM/yyyy HH:mm:ss");
 
         //pedir dados como marca do carro, modelo do carro, placa do carro e valor do carro
 
@@ -35,7 +37,8 @@ public class auroraRegisterSystem{
                     
         Thread.sleep(3000);
         System.out.print("Welcome "+loginName);
-
+        System.out.print("access in "+auroraSystemDate.format(auroraDate));
+        
         else{
             System.out.print("Errado");
         }
