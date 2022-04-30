@@ -4,6 +4,9 @@ import java.util.Scanner;
 import java.util.Locale;
 import java.util.List;
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.time.Instant;
 import entities.AuroraEngine;
 
 
@@ -14,6 +17,8 @@ public class auroraRegisterSystem{
 
         List<AuroraEngine> auroraList = new ArrayList<>(); //Criação da lista para armazenamento dos registros
 
+        SimpleDateFormat auroraSystemDate = new SimpleDateFormat("dd/MM/yyyy");
+
         //pedir dados como marca do carro, modelo do carro, placa do carro e valor do carro
 
         System.out.print("Name : ");
@@ -21,15 +26,20 @@ public class auroraRegisterSystem{
         System.out.print("Password : ");
         String loginPassword = scan.nextLine();
 
-        if(loginPassword == "auroraSystem3323"){
-            System.out.print("Bem vindo thauan");
+        if(loginPassword.equals("auroraSystem3323")){
+            if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
         }
+                    
+        Thread.sleep(3000);
+        System.out.print("Welcome "+loginName);
+
         else{
             System.out.print("Errado");
         }
 
-        System.out.println("Teste");
-        String texto = scan.next();
 
         //Limpa a tela no windows, no linux e no MacOS
         if (System.getProperty("os.name").contains("Windows"))
