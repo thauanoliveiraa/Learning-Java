@@ -16,8 +16,17 @@ public class auroraRegisterSystem{
 
         //pedir dados como marca do carro, modelo do carro, placa do carro e valor do carro
 
+        System.out.print("Name : ");
+        String loginName = scan.nextLine();
+        System.out.print("Password : ");
+        String loginPassword = scan.nextLine();
 
-        System.out.print("Insira a marca do carro : ");
+        if(loginPassword == "auroraSystem3323"){
+            System.out.print("Bem vindo thauan");
+        }
+        else{
+            System.out.print("Errado");
+        }
 
         System.out.println("Teste");
         String texto = scan.next();
