@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.Locale;
 import java.util.List;
 import java.util.ArrayList;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.Instant;
@@ -11,7 +12,7 @@ import entities.AuroraEngine;
 
 
 public class auroraRegisterSystem{
-    public static void main(String[] args) throws IOException, InterruptedException{
+    public static void main(String[] args) throws IOException, InterruptedException, ParseException{
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
 
@@ -29,27 +30,17 @@ public class auroraRegisterSystem{
         String loginPassword = scan.nextLine();
 
         if(loginPassword.equals("auroraSystem3323")){
-            if (System.getProperty("os.name").contains("Windows"))
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        else
-            Runtime.getRuntime().exec("clear");
-        }
-                    
-        Thread.sleep(3000);
-        System.out.print("Welcome "+loginName);
-        System.out.print("access in "+auroraSystemDate.format(auroraDate));
+            if (System.getProperty("os.name").contains("Windows")) new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            
+            else
+                Runtime.getRuntime().exec("clear");
+        }                        
+            Thread.sleep(3000);
+            System.out.print("Welcome "+loginName);
+            System.out.print("access in "+auroraSystemDate.format(auroraDate));
         
-        else{
-            System.out.print("Errado");
-        }
 
 
-        //Limpa a tela no windows, no linux e no MacOS
-        if (System.getProperty("os.name").contains("Windows"))
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        else
-            Runtime.getRuntime().exec("clear");
-        
-        
+                
     }
 }
