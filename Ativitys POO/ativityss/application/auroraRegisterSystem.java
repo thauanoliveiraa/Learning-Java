@@ -47,11 +47,12 @@ public class auroraRegisterSystem{
             Thread.sleep(3000);
             int hora = c.get(Calendar.HOUR_OF_DAY);
 
-            int month = c.get(Calendar.MONTH);
+            int month = c.get(Calendar.MONTH)+1;
 
-            
+        
+            //System.out.println("Mês: "+c.get(Calendar.MONTH));
 
-            System.out.println("Mês: "+c.get(Calendar.MONTH));
+            System.out.print("Mês : \n"+month);
 
             if(hora > 6 && hora < 12){
                 System.out.println("Good Morning, welcome "+loginName);
@@ -71,6 +72,6 @@ public class auroraRegisterSystem{
             System.out.println("Ano: "+c.get(Calendar.YEAR));
             System.out.println("Mês: "+c.get(Calendar.MONTH));
             System.out.println("Dia do Mês: "+c.get(Calendar.DAY_OF_MONTH));  */ 
-        }
+        
     }
 }
