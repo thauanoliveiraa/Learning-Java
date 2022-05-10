@@ -97,6 +97,8 @@ System.out.print(horaa);
                 System.out.println("Don´t identify the access");
             }
 
+            System.out.print("at "+horaa);
+
         } else {
             System.out.print("Password is not correct, try again"); // VER COMO RETORNAR PARA O INICIO
             //return; TESTAR COMO RETORNAR PARA O INICIO
@@ -120,25 +122,33 @@ System.out.print(horaa);
             System.out.println("Mês: "+c.get(Calendar.MONTH));
             System.out.println("Dia do Mês: "+c.get(Calendar.DAY_OF_MONTH));  */     
 
-        /* System.out.print("How many employees will be registered ? ");
+
+
+
+
+        /* System.out.print("How many registrations would you like to make? ");
         int auroraCarRegister = scan.nextInt();
 
         for(int i = 0; i<auroraCarRegister; i++){
             System.out.println("\n\n");
             System.out.printf("-- %d REGISTER --\n", i+1);
-            System.out.print("\nInsert the ID : ");
-            int employeeID = scan.nextInt();
-            while(checkID(dataList, employeeID)){
+            System.out.print("\nInsert the car ID : ");
+            int carID = scan.nextInt();
+            while(checkID(dataList, carID)){
                 System.out.print("This ID already exist, try again\n\n");
                 System.out.print("Insert the ID : ");
                 employeeID = scan.nextInt(); 
             }
-            System.out.print("\nInsert the name : ");
-            String employeeName = scan.nextLine();
-            employeeName = scan.nextLine();
-            System.out.print("\nInsert the actual salary R$ ");
-            double employeeSalary = scan.nextDouble();
+            System.out.print("\nInsert the car model : ");
+            String carModel = scan.nextInt();
+            System.out.print("\nInsert the car name : ");
+            String carName = scan.nextLine();
+            carName = scan.nextLine();
+            System.out.print("\nInsert the car license plate : ");
+            int carLicensePlate = scan.nextInt();
 
+            AuroraEngine aurora = new AuroraEngine()
+            
             EmployeeDataREMAKE employee = new EmployeeDataREMAKE(employeeID, employeeName, employeeSalary);
 
             dataList.add(employee);
@@ -206,9 +216,9 @@ System.out.print(horaa);
     }
 }
 
-/* public static boolean checkID(List<EmployeeDataREMAKE> dataList, int employeeID) {
-    EmployeeDataREMAKE employee = dataList.stream().filter(x -> x.getEmployeeID() == employeeID).findFirst().orElse(null);
-    return employee != null;
+/* public static boolean checkID(List<AuroraEngine> auroraList, int carID) {
+    AuroraEngine aurora = auroraList.stream().filter(x -> x.getCarID() == carID).findFirst().orElse(null);
+    return aurora != null;
 } */
 
 
