@@ -31,12 +31,17 @@ public class auroraRegisterSystem{
 
         Calendar c = Calendar.getInstance();
 
+        Date dataHoraAtual = new Date();
+        String data = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+        String horaa = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
 
-        int hora = 0;
+         int hora = 0;
 
-        int month = 0;
+         int month = 0;
 
         //pedir dados como marca do carro, modelo do carro, placa do carro e valor do carro
+
+System.out.print(horaa);
 
         System.out.print("Name : ");
         String loginName = scan.nextLine();
@@ -64,10 +69,32 @@ public class auroraRegisterSystem{
                     System.out.println("Good Night, welcome "+loginName);
                 }
   
-            if(month == 5){ 
+            if(month == 1){ 
+                System.out.println("Access in January");
+            }else if(month == 2){ 
+                System.out.println("Access in February");
+            }else if(month == 3){ 
+                System.out.println("Access in March");
+            }else if(month == 4){ 
+                System.out.println("Access in April");
+            }else if(month == 5){ 
                 System.out.println("Access in May");
+            }else if(month == 6){ 
+                System.out.println("Access in June");
+            }else if(month == 7){ 
+                System.out.println("Access in July");
+            }else if(month == 8){ 
+                System.out.println("Access in August");
+            }else if(month == 9){ 
+                System.out.println("Access in September");
+            }else if(month == 10){ 
+                System.out.println("Access in October");
+            }else if(month == 11){ 
+                System.out.println("Access in November");
+            }else if(month == 12){ 
+                System.out.println("Access in December");
             }else{
-                System.out.println("");
+                System.out.println("Don´t identify the access");
             }
 
         } else {
@@ -93,10 +120,10 @@ public class auroraRegisterSystem{
             System.out.println("Mês: "+c.get(Calendar.MONTH));
             System.out.println("Dia do Mês: "+c.get(Calendar.DAY_OF_MONTH));  */     
 
-        System.out.print("How many employees will be registered ? ");
+        /* System.out.print("How many employees will be registered ? ");
         int auroraCarRegister = scan.nextInt();
 
-        for(int i = 0; i<employeeRegister; i++){
+        for(int i = 0; i<auroraCarRegister; i++){
             System.out.println("\n\n");
             System.out.printf("-- %d REGISTER --\n", i+1);
             System.out.print("\nInsert the ID : ");
@@ -175,17 +202,14 @@ public class auroraRegisterSystem{
             }
         }while(choice !=5);
 
-        scan.close();
-    }
-
+        scan.close(); */
     }
 }
 
-public static boolean checkID(List<EmployeeDataREMAKE> dataList, int employeeID) {
+/* public static boolean checkID(List<EmployeeDataREMAKE> dataList, int employeeID) {
     EmployeeDataREMAKE employee = dataList.stream().filter(x -> x.getEmployeeID() == employeeID).findFirst().orElse(null);
     return employee != null;
-}
-}
+} */
 
 
 /* public static void identifyMonth(List<EmployeeDataREMAKE> dataList, int employeeID) {
